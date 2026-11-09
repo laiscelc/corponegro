@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Radiação do corpo negro, energia solar e sensores aplicados à piscina do CEP.">
+  <title>Sol + Água | Radiação do corpo negro</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header>
+    <a class="brand" href="#inicio">☀ Sol <b>+</b> Água</a>
+
+    <button id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+
+    <nav id="menu" aria-label="Navegação principal">
+      <a href="#conceito">Conceito</a>
+      <a href="#simulador">Simulador</a>
+      <a href="#piscina">Sol e piscina</a>
+      <a href="#sensores">Sensores</a>
+      <a href="#acessibilidade">Acessibilidade</a>
+    </nav>
+
+    <div class="tools">
+      <button id="contrast" aria-pressed="false">Alto contraste</button>
+      <button id="dyslexia" aria-pressed="false">Fonte de leitura</button>
+      <button id="smaller" aria-label="Diminuir texto">A−</button>
+      <button id="larger" aria-label="Aumentar texto">A+</button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div>
+        <p class="eyebrow">FÍSICA MODERNA · PROJETO INTEGRADOR</p>
+        <h1>A luz do Sol<br><em>aquece a água.</em></h1>
+        <p class="lead">
+          Explore como os objetos emitem radiação, como a temperatura muda
+          essa energia e o que a física do Sol ensina sobre o aquecimento
+          sustentável da piscina do CEP.
+        </p>
+        <a class="button" href="#conceito">Começar a explorar ↓</a>
+      </div>
+
+      <div class="illustration" role="img"
+        aria-label="Ilustração do Sol emitindo energia para a água da piscina">
+        <div class="sun"></div>
+        <div class="pool"></div>
+      </div>
+    </section>
+
+    <section class="section two" id="conceito">
+      <div>
+        <p class="eyebrow">01 · IDEIA CENTRAL</p>
+        <h2>O que é um <em>corpo negro?</em></h2>
+        <p>
+          É um modelo ideal que absorve toda a radiação eletromagnética que
+          recebe. Como absorve energia, também emite radiação; o espectro
+          emitido depende principalmente de sua temperatura.
+        </p>
+        <p>
+          Nenhum objeto real é perfeitamente negro. O modelo ajuda a descrever
+          estrelas e superfícies aquecidas — e a entender a energia que chega
+          do Sol.
+        </p>
+      </div>
+
+      <aside class="card">
+        <h3>Mais quente, mais energético</h3>
+        <p>
+          Aumentando a temperatura, cresce a energia total emitida e o pico
+          do espectro muda para comprimentos de onda menores.
+        </p>
+        <a href="#simulador">Explore o simulador →</a>
+      </aside>
+    </section>
+
+    <section class="section science">
+      <p class="eyebrow">02 · PERGUNTAS ORIENTADORAS</p>
+      <h2>Quatro perguntas para <em>observar o céu.</em></h2>
+
+      <div class="grid four">
+        <article>
+          <b>01</b>
+          <h3>O que é um corpo negro ideal?</h3>
+          <p>Um absorvedor perfeito usado como modelo para estudar emissão térmica.</p>
+        </article>
+
+        <article>
+          <b>02</b>
+          <h3>O que muda com a temperatura?</h3>
+          <p>A intensidade total aumenta e o pico vai para ondas mais curtas.</p>
+        </article>
+
+        <article>
+          <b>03</b>
+          <h3>Por que o Sol emite luz visível e infravermelha?</h3>
+          <p>
+            Sua superfície, a cerca de 5.800 K, emite um amplo espectro
+            com pico próximo da faixa visível, além de infravermelho e
+            ultravioleta.
+          </p>
+        </article>
+
+        <article>
+          <b>04</b>
+          <h3>Como isso ajuda a usar energia solar?</h3>
+          <p>
+            Ajuda a compreender a radiação incidente e escolher superfícies
+            que absorvam energia para aquecer a água.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section dark" id="simulador">
+      <div class="head">
+        <div>
+          <p class="eyebrow">03 · SIMULADOR INTERATIVO</p>
+          <h2>A temperatura muda <em>a emissão.</em></h2>
+        </div>
+        <p>
+          Altere o controle. Veja a estimativa do pico pela Lei de Wien e a
+          curva qualitativa de emissão térmica.
+        </p>
+      </div>
+
+      <div class="sim">
+        <div class="panel">
+          <label for="temp">
+            Temperatura do objeto
+            <output id="tempOut">5.800 K</output>
+          </label>
+          <input id="temp" type="range" min="1000" max="10000"
+            step="100" value="5800">
+
+          <div class="result">
+            <span>Pico estimado</span>
+            <strong id="peak">≈ 500 nm</strong>
+            <span id="band">Faixa visível</span>
+          </div>
+
+          <small>
+            λmáxT ≈ 2,898 × 10⁻³ m·K. Curva educativa simplificada da
+            distribuição de Planck.
+          </small>
+        </div>
+
+        <div class="chart">
+          <svg viewBox="0 0 600 300" role="img"
+            aria-labelledby="chartTitle chartDesc">
+            <title id="chartTitle">Espectro de emissão térmica</title>
+            <desc id="chartDesc">
+              Curva qualitativa de intensidade em função do comprimento de
+              onda, atualizada pelo controle de temperatura.
+            </desc>
+            <defs>
+              <linearGradient id="spectrum">
+                <stop stop-color="#713bdb"/>
+                <stop offset=".25" stop-color="#1688db"/>
+                <stop offset=".5" stop-color="#21ae73"/>
+                <stop offset=".75" stop-color="#f1c232"/>
+                <stop offset="1" stop-color="#e55039"/>
+              </linearGradient>
+            </defs>
+            <rect x="70" y="20" width="480" height="225"
+              fill="url(#spectrum)" opacity=".13"/>
+            <path d="M70 20V245H550" fill="none" stroke="#567"/>
+            <path id="curve" d="" fill="none" stroke="#ed7100" stroke-width="5"/>
+            <line id="peakLine" y1="25" y2="245" stroke="#087e8b"
+              stroke-dasharray="6 5" stroke-width="2"/>
+            <text x="72" y="270">UV</text>
+            <text x="280" y="270">Visível</text>
+            <text x="470" y="270">Infravermelho</text>
+            <text x="230" y="295">Comprimento de onda →</text>
+          </svg>
+          <p id="chartSummary" aria-live="polite">Pico próximo da faixa visível.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="piscina">
+      <p class="eyebrow">04 · CONEXÃO COM A PISCINA DO CEP</p>
+      <h2>Do Sol à piscina: <em>energia em movimento.</em></h2>
+      <p class="lead">
+        A radiação solar chega ao coletor. Uma superfície adequada absorve
+        parte dessa energia; a água circula pelos tubos, recebe calor e retorna
+        à piscina. Isolamento e cobertura reduzem perdas térmicas.
+      </p>
+
+      <div class="flow"
+        aria-label="Sol emite radiação; coletor absorve energia; sensores medem temperaturas; bomba circula água aquecida para a piscina.">
+        <div>☀<b>Sol</b><span>emite radiação</span></div>
+        <span aria-hidden="true">→</span>
+        <div>▤<b>Coletor</b><span>absorve energia</span></div>
+        <span aria-hidden="true">→</span>
+        <div>◉<b>Sensores</b><span>medem temperatura</span></div>
+        <span aria-hidden="true">→</span>
+        <div>≈<b>Piscina</b><span>recebe calor</span></div>
+      </div>
+
+      <div class="compare two">
+        <div>
+          <p class="eyebrow">COMPARATIVO VISUAL</p>
+          <h3>Absorver ou refletir?</h3>
+          <p>Compare superfícies. Indicador ilustrativo, não substitui medidas de materiais reais.</p>
+          <label for="surface">Superfície do coletor</label>
+          <select id="surface">
+            <option value="dark">Escura</option>
+            <option value="light">Clara</option>
+          </select>
+          <p id="absorb" aria-live="polite">
+            Superfície escura: tende a absorver mais radiação visível.
+          </p>
+        </div>
+
+        <div class="demo" id="demo" role="img"
+          aria-label="Ilustração de coletor solar com superfície escura">
+          <span>☀</span>
+          <div></div>
+          <b id="surfaceText">Coletor de superfície escura</b>
+        </div>
+      </div>
+    </section>
+
+    <section class="section two science" id="sensores">
+      <div>
+        <p class="eyebrow">05 · ROBÓTICA E PROGRAMAÇÃO</p>
+        <h2>Sensores ajudam a <em>decidir.</em></h2>
+        <p>
+          Sensores medem a temperatura da piscina e a saída do coletor. Se o
+          coletor estiver mais quente que a água, o controlador aciona a bomba;
+          quando a diferença não compensa, interrompe a circulação.
+        </p>
+        <p>Os valores são fictícios e demonstram a lógica do controle.</p>
+      </div>
+
+      <div class="panel sensor">
+        <h3>Central de controle</h3>
+        <label for="poolTemp">Piscina <output id="pOut">25 °C</output></label>
+        <input id="poolTemp" type="range" min="18" max="34" value="25">
+
+        <label for="collectorTemp">
+          Coletor <output id="cOut">40 °C</output>
+        </label>
+        <input id="collectorTemp" type="range" min="18" max="60" value="40">
+
+        <p id="status" role="status">Bomba ligada: coletor mais quente.</p>
+        <pre>se T_coletor &gt; T_piscina + margem: ligar bomba; senão: desligar bomba</pre>
+      </div>
+    </section>
+
+    <section class="section two">
+      <div class="orb" aria-hidden="true"></div>
+      <div>
+        <p class="eyebrow">06 · FÍSICA MODERNA</p>
+        <h2>A radiação térmica <em>não é uma só cor.</em></h2>
+        <p>
+          Um corpo negro emite uma distribuição contínua de comprimentos de
+          onda. A lei de Planck descreve a distribuição; a lei de Wien
+          relaciona temperatura e comprimento de onda do pico. Objetos à
+          temperatura ambiente emitem principalmente infravermelho, invisível
+          aos olhos.
+        </p>
+        <p>
+          O Sol é muito mais quente e sua emissão abrange diferentes regiões
+          do espectro. A atmosfera filtra parte da radiação; coletores
+          transformam a parcela incidente em calor.
+        </p>
+        <p>
+          <strong>Efeito fotoelétrico:</strong> a luz também pode liberar
+          elétrons em certos materiais, princípio relacionado a dispositivos
+          fotovoltaicos. Isso é diferente do aquecimento solar térmico da
+          piscina.
+        </p>
+      </div>
+    </section>
+
+    <section class="section inclusion" id="acessibilidade">
+      <p class="eyebrow">07 · ACESSIBILIDADE E INCLUSÃO</p>
+      <h2>Aprender precisa caber <em>em todo mundo.</em></h2>
+      <p class="lead">
+        A equipe pode gravar explicações em Libras para os principais assuntos
+        do projeto. Cada vídeo deve ter título, controles, legenda em português
+        e transcrição do conteúdo sinalizado.
+      </p>
+
+      <div class="libras-grid" aria-label="Espaços reservados para vídeos educativos em Libras">
+        <article class="libras-card">
+          <span class="libras-number">01</span>
+          <h3>Radiação do corpo negro</h3>
+          <p>O que é um corpo negro e por que objetos aquecidos emitem radiação?</p>
+          <div class="video-placeholder" role="img"
+            aria-label="Espaço para vídeo em Libras sobre radiação do corpo negro">
+            <span aria-hidden="true">▶</span>
+            <b>Vídeo em Libras</b>
+            <small>Adicionar: videos/corpo-negro.mp4</small>
+          </div>
+          <details>
+            <summary>Transcrição em português</summary>
+            <p>Insira aqui a transcrição do vídeo.</p>
+          </details>
+        </article>
+
+        <article class="libras-card">
+          <span class="libras-number">02</span>
+          <h3>Sol e energia solar</h3>
+          <p>Como a radiação solar chega à Terra e pode aquecer a água?</p>
+          <div class="video-placeholder" role="img"
+            aria-label="Espaço para vídeo em Libras sobre energia solar">
+            <span aria-hidden="true">▶</span>
+            <b>Vídeo em Libras</b>
+            <small>Adicionar: videos/energia-solar.mp4</small>
+          </div>
+          <details>
+            <summary>Transcrição em português</summary>
+            <p>Insira aqui a transcrição do vídeo.</p>
+          </details>
+        </article>
+
+        <article class="libras-card">
+          <span class="libras-number">03</span>
+          <h3>Sensores e aquecimento da piscina</h3>
+          <p>Como os sensores ajudam a controlar a bomba e a circulação da água?</p>
+          <div class="video-placeholder" role="img"
+            aria-label="Espaço para vídeo em Libras sobre sensores na piscina">
+            <span aria-hidden="true">▶</span>
+            <b>Vídeo em Libras</b>
+            <small>Adicionar: videos/sensores-piscina.mp4</small>
+          </div>
+          <details>
+            <summary>Transcrição em português</summary>
+            <p>Insira aqui a transcrição do vídeo.</p>
+          </details>
+        </article>
+
+        <article class="libras-card">
+          <span class="libras-number">04</span>
+          <h3>Efeito fotoelétrico</h3>
+          <p>Como a luz pode liberar elétrons e gerar corrente em uma célula fotovoltaica?</p>
+          <div class="video-placeholder" role="img"
+            aria-label="Espaço para vídeo em Libras sobre efeito fotoelétrico">
+            <span aria-hidden="true">▶</span>
+            <b>Vídeo em Libras</b>
+            <small>Adicionar: videos/efeito-fotoeletrico.mp4</small>
+          </div>
+          <details>
+            <summary>Transcrição em português</summary>
+            <p>Insira aqui a transcrição do vídeo.</p>
+          </details>
+        </article>
+      </div>
+
+      <aside class="libras-tip">
+        <strong>Para adicionar uma gravação:</strong>
+        crie uma pasta <code>videos</code> junto ao <code>index.html</code>
+        e coloque nela o MP4 com o nome indicado em cada cartão.
+      </aside>
+
+      <details class="video-model">
+        <summary>Modelo acessível para inserir um vídeo</summary>
+        <pre><code>&lt;video controls playsinline preload="metadata"
+  aria-label="Explicação em Libras: radiação do corpo negro"&gt;
+  &lt;source src="videos/corpo-negro.mp4" type="video/mp4"&gt;
+  &lt;track kind="captions" src="legendas/corpo-negro.vtt"
+    srclang="pt-BR" label="Português" default&gt;
+  Seu navegador não consegue reproduzir este vídeo.
+&lt;/video&gt;</code></pre>
+      </details>
+
+      <div class="libras-tools">
+        <article>
+          <h3>Leitura e teclado</h3>
+          <p>
+            Alto contraste, fonte alternativa, tamanho ajustável, foco visível,
+            salto para conteúdo e controles rotulados. Navegue com Tab; ative
+            com Enter ou Espaço.
+          </p>
+        </article>
+
+        <article>
+          <h3>VLibras</h3>
+          <p>Widget de tradução integrado; requer conexão à internet.</p>
+          <div vw class="enabled">
+            <div vw-access-button class="active"
+              aria-label="Abrir tradução para Libras"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#inicio">☀ Sol + Água</a>
+    <p>Projeto Integrador · Piscina térmica do CEP</p>
+    <a href="#inicio">Voltar ao início ↑</a>
+    <nav aria-label="Mapa do site">
+      <b>Mapa do site</b>
+      <a href="#conceito">Conceito</a>
+      <a href="#simulador">Simulador</a>
+      <a href="#piscina">Piscina</a>
+      <a href="#sensores">Sensores</a>
+      <a href="#acessibilidade">Acessibilidade</a>
+    </nav>
+  </footer>
+
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    if (window.VLibras) {
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    }
+  </script>
+</body>
+</html>
