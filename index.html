@@ -21,7 +21,7 @@
       <a href="#simulador">Simulador</a>
       <a href="#piscina">Sol e piscina</a>
       <a href="#sensores">Sensores</a>
-      <a href="#acessibilidade">Acessibilidade</a>
+
     </nav>
 
     <div class="tools">
@@ -278,122 +278,7 @@
         </p>
       </div>
     </section>
-
-    <section class="section inclusion" id="acessibilidade">
-      <p class="eyebrow">07 · ACESSIBILIDADE E INCLUSÃO</p>
-      <h2>Aprender precisa caber <em>em todo mundo.</em></h2>
-      <p class="lead">
-        A equipe pode gravar explicações em Libras para os principais assuntos
-        do projeto. Cada vídeo deve ter título, controles, legenda em português
-        e transcrição do conteúdo sinalizado.
-      </p>
-
-      <div class="libras-grid" aria-label="Espaços reservados para vídeos educativos em Libras">
-        <article class="libras-card">
-          <span class="libras-number">01</span>
-          <h3>Radiação do corpo negro</h3>
-          <p>O que é um corpo negro e por que objetos aquecidos emitem radiação?</p>
-          <div class="video-placeholder" role="img"
-            aria-label="Espaço para vídeo em Libras sobre radiação do corpo negro">
-            <span aria-hidden="true">▶</span>
-            <b>Vídeo em Libras</b>
-            <small>Adicionar: videos/corpo-negro.mp4</small>
-          </div>
-          <details>
-            <summary>Transcrição em português</summary>
-            <p>Insira aqui a transcrição do vídeo.</p>
-          </details>
-        </article>
-
-        <article class="libras-card">
-          <span class="libras-number">02</span>
-          <h3>Sol e energia solar</h3>
-          <p>Como a radiação solar chega à Terra e pode aquecer a água?</p>
-          <div class="video-placeholder" role="img"
-            aria-label="Espaço para vídeo em Libras sobre energia solar">
-            <span aria-hidden="true">▶</span>
-            <b>Vídeo em Libras</b>
-            <small>Adicionar: videos/energia-solar.mp4</small>
-          </div>
-          <details>
-            <summary>Transcrição em português</summary>
-            <p>Insira aqui a transcrição do vídeo.</p>
-          </details>
-        </article>
-
-        <article class="libras-card">
-          <span class="libras-number">03</span>
-          <h3>Sensores e aquecimento da piscina</h3>
-          <p>Como os sensores ajudam a controlar a bomba e a circulação da água?</p>
-          <div class="video-placeholder" role="img"
-            aria-label="Espaço para vídeo em Libras sobre sensores na piscina">
-            <span aria-hidden="true">▶</span>
-            <b>Vídeo em Libras</b>
-            <small>Adicionar: videos/sensores-piscina.mp4</small>
-          </div>
-          <details>
-            <summary>Transcrição em português</summary>
-            <p>Insira aqui a transcrição do vídeo.</p>
-          </details>
-        </article>
-
-        <article class="libras-card">
-          <span class="libras-number">04</span>
-          <h3>Efeito fotoelétrico</h3>
-          <p>Como a luz pode liberar elétrons e gerar corrente em uma célula fotovoltaica?</p>
-          <div class="video-placeholder" role="img"
-            aria-label="Espaço para vídeo em Libras sobre efeito fotoelétrico">
-            <span aria-hidden="true">▶</span>
-            <b>Vídeo em Libras</b>
-            <small>Adicionar: videos/efeito-fotoeletrico.mp4</small>
-          </div>
-          <details>
-            <summary>Transcrição em português</summary>
-            <p>Insira aqui a transcrição do vídeo.</p>
-          </details>
-        </article>
-      </div>
-
-      <aside class="libras-tip">
-        <strong>Para adicionar uma gravação:</strong>
-        crie uma pasta <code>videos</code> junto ao <code>index.html</code>
-        e coloque nela o MP4 com o nome indicado em cada cartão.
-      </aside>
-
-      <details class="video-model">
-        <summary>Modelo acessível para inserir um vídeo</summary>
-        <pre><code>&lt;video controls playsinline preload="metadata"
-  aria-label="Explicação em Libras: radiação do corpo negro"&gt;
-  &lt;source src="videos/corpo-negro.mp4" type="video/mp4"&gt;
-  &lt;track kind="captions" src="legendas/corpo-negro.vtt"
-    srclang="pt-BR" label="Português" default&gt;
-  Seu navegador não consegue reproduzir este vídeo.
-&lt;/video&gt;</code></pre>
-      </details>
-
-      <div class="libras-tools">
-        <article>
-          <h3>Leitura e teclado</h3>
-          <p>
-            Alto contraste, fonte alternativa, tamanho ajustável, foco visível,
-            salto para conteúdo e controles rotulados. Navegue com Tab; ative
-            com Enter ou Espaço.
-          </p>
-        </article>
-
-        <article>
-          <h3>VLibras</h3>
-          <p>Widget de tradução integrado; requer conexão à internet.</p>
-          <div vw class="enabled">
-            <div vw-access-button class="active"
-              aria-label="Abrir tradução para Libras"></div>
-            <div vw-plugin-wrapper>
-              <div class="vw-plugin-top-wrapper"></div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
+         
   </main>
 
   <footer>
@@ -406,10 +291,15 @@
       <a href="#simulador">Simulador</a>
       <a href="#piscina">Piscina</a>
       <a href="#sensores">Sensores</a>
-      <a href="#acessibilidade">Acessibilidade</a>
     </nav>
   </footer>
-
+ <div vw class="enabled">
+            <div vw-access-button class="active"
+              aria-label="Abrir tradução para Libras"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+          </div>
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
   <script>
     if (window.VLibras) {
